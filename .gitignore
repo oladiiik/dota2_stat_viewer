@@ -1,0 +1,10 @@
+/.gradle
+/.idea
+/build
+/frontend/.idea
+/frontend/node_modules
+/gradle
+/node_modules
+/src/test
+.gitattributes
+docker-compose.yml

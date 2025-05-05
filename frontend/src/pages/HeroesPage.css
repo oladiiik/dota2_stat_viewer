@@ -1,0 +1,41 @@
+.hero-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.hero-table th,
+.hero-table td {
+    padding: 8px 12px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.hero-table th {
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+.hero-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+.hero-name {
+    display: flex;
+    align-items: center;
+}
+.hero-portrait {
+    width: 86px;
+    height: 48px;
+    margin-right: 8px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #444;
+}
+.hero-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* src/pages/HeroesPage.css */
+.hero-table th {
+    cursor: pointer;
+    user-select: none;
+}

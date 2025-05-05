@@ -1,0 +1,29 @@
+.player-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.player-table th,
+.player-table td {
+    padding: 8px 12px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.player-table th {
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+.player-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.player-avatar {
+    width: 64px;
+    height: 64px;
+}
+
+.player-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}

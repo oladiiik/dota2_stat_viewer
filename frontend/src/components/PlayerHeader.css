@@ -1,0 +1,75 @@
+.player-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #1d2735 0%, #3a3f47 100%);
+    padding: calc(var(--gap) * 1) calc(var(--gap) * 3);
+    margin-bottom: calc(var(--gap) * 1.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.player-header-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin-right: 16px;
+    border: 3px solid #43b581;
+    box-shadow: 0 2px 10px rgba(67,181,129,0.4);
+}
+
+.player-header-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* додай у кінець файлу */
+.load-all-btn {
+    margin-left: auto;             /* притискаємо до правого краю */
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #5865f2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.load-all-btn:hover:not(:disabled) {
+    background: #4752c4;
+    transform: translateY(-2px);
+}
+
+.load-all-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+/* Вставити у кінець файлу */
+
+/* Ліва частина (аватар + ім’я) */
+.player-header-info {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;   /* не росте, не стискається */
+}
+
+/* Центрована область пошуку */
+.player-header-search {
+    flex: 1 1 auto;            /* росте, щоб зайняти весь вільний простір */
+    display: flex;
+    justify-content: center;
+    margin-top: 25px/* по горизонталі центр */
+}
+
+/* Кнопка справа */
+.load-all-btn {
+    flex: 0 0 auto;   /* не росте, не стискається */
+    margin-left: 16px; /* невеликий відступ від центру */
+}
+
+

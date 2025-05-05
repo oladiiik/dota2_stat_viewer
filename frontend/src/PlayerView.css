@@ -1,0 +1,876 @@
+
+.match-item,
+.top-hero-item {
+    background: rgba(30,30,30, 0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+}
+
+.match-item:hover{
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+
+/* Match list grid */
+.match-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.match-item {
+    display: grid;
+    grid-template-columns: auto auto auto auto 1fr auto;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.match-hero img {
+    height: 52px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid #444;
+}
+
+.match-result .win,
+.match-result .lose {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.match-result .win {
+    background-color: #43b581;
+}
+.match-result .lose {
+    background-color: #f04747;
+}
+
+.match-kda {
+    font-size: 17px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.match-gpmxpm,
+.match-time {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+.match-time .duration {
+    margin-top: 4px;
+    font-weight: 500;
+}
+.match-mode{
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 2px;
+    text-transform: capitalize;
+}
+.player-view {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap);
+    margin-top: var(--gap);
+}
+/* Section headers */
+.matches-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: var(--gap);
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.matches-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Top heroes */
+.top-heroes-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--gap);
+}
+.top-hero-item {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+}
+.top-hero-img {
+    width: 54px;
+    margin-right: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid #444;
+}
+
+.top-hero-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.top-hero-stats {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Progress bars */
+.top-bar-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.top-bar-label {
+    width: 44px;
+    font-size: 13px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: 500;
+}
+.top-bar {
+    flex-grow: 1;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgba(20,20,20,0.5);
+}
+.top-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.top-kda-text {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Right column activity */
+.right-column {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: var(--gap);
+    border: 1px solid #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.activity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--gap);
+}
+.activity-count {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+.activity-wrapper {
+    display: flex;
+}
+
+/* Підписи днів тижня */
+.weekdays {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 8px;
+    padding-top: 6px;
+}
+
+.weekday-label {
+    font-size: 10px;
+    color: #aaa;
+    height: calc((100% - 8px) / 7);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Основна сітка */
+.activity-grid {
+    display: flex;
+    gap: 4px;
+}
+
+.week-column {
+    display: grid;
+    grid-template-rows: repeat(7, 14px);
+    gap: 4px;
+}
+/* Місяці */
+.months {
+    display: flex;
+    margin-top: 8px;
+    gap: 4px;
+}
+
+.month-label {
+    width: 14px;
+    font-size: 10px;
+    text-align: center;
+    color: #aaa;
+}
+
+/* Сама клітинка */
+.activity-cell-wrapper {
+    position: relative;
+    width: 14px;
+    aspect-ratio: 1 / 1; /* Додаємо! */
+    background: transparent;
+    border-radius: 4px;
+    overflow: visible;
+}
+
+.activity-cell-base {
+    width: 100%;
+    height: 100%;
+    background: #2f2f2f;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* <-- Додаємо! */
+    position: relative;
+}
+
+.activity-cell-colored {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+.today-marker {
+    width: 85%;
+    height: 85%;
+    border-radius: 4px;
+    transition: all 0.3s ease, transform 0.3s ease;
+    border: 2px solid #8A8A8AFF;   /* або var(--accent) */
+
+    pointer-events: none;     /* щоб tooltip і ховери працювали без проблем */
+    background: transparent;  /* щоб не перекривати заливку winrate */
+
+}
+/* Tooltip */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2f2f2f;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.activity-cell-wrapper:hover .tooltip {
+    display: block;
+}
+
+.tooltip-date {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.tooltip-stat {
+    margin-top: 2px;
+}
+/* Glassmorphism для правої колонки */
+.right-column {
+    background: rgba(30, 30, 30, 0.45);      /* напівпрозорий фон */
+    backdrop-filter: blur(8px);              /* розмиття заднього фону */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* При наведенні — легкий «підйом» */
+
+
+/* Внутрішні блоки теж згладжуємо й вирівнюємо */
+.activity-wrapper {
+    padding: var(--gap);
+    gap: var(--gap);
+}
+
+/* Підписи днів з легшим кольором */
+.weekday-label {
+    color: var(--text-main);
+    opacity: 0.7;
+}
+
+/* Підказки прозорі, щоб «не вирізнялися» */
+.tooltip {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+}
+/* 1) Дозволяємо гріду показувати зсувні діти */
+.player-view {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    gap: var(--gap);
+    margin-top: var(--gap);
+    overflow: visible;                /* важливо! */
+}
+
+/* 2) Обгортка, яка центрує й випинає праву колонку */
+.activity-panel-wrapper {
+    position: relative;
+    overflow: visible;
+    /* Виступаємо вправо на 20px */
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 0px;
+}
+
+/* 3) Фактична картка активності */
+.activity-panel-wrapper .right-column {
+    background: rgba(30,30,30,0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    padding: var(--gap);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 400px;                     /* або підлаштуй під вашу ширину */
+}
+
+
+
+/* Додатковий негативний відступ, щоб підкладка перекривала контент знизу */
+.player-view + .activity-panel-wrapper {
+    margin-bottom: -20px;
+}
+/* ===== Stats summary ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+.stat-card {
+    background: rgba(30,30,30,0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.stat-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+.stat-value.win { color: #43b581; }
+.stat-value.lose { color: #f04747; }
+.accent { color: #d4c53f; }             /* жовтий, як на скріні */
+
+.stat-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+/* — квадрати progress-bar — */
+.squares-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+    overflow: hidden;
+}
+.square {
+    width: 8px;
+    height: 8px;
+    background: #444;
+    border-radius: 2px;
+}
+.square.filled {
+    background: #d4c53f;
+}
+
+/* — winrate progress-bar — */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #2a2a2a;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+.progress-fill.win { background: #43b581; }
+.progress-fill.lose { background: #f04747; }
+
+.winlose-count {
+    font-size: 0.8rem;
+    margin: -2px 0 6px 0;
+}
+.win-count  { color: #43b581; font-weight: 600; }
+.lose-count { color: #f04747; font-weight: 600; }
+/* ─────────  FIX TYPOGRAPHY JITTER  ───────── */
+
+/* ⇢ однакова ширина цифр, щоб рядки не “стри-бали” */
+.stat-card,
+.stat-card * {
+    font-variant-numeric: tabular-nums;   /* моноширинні цифри */
+}
+
+/* основний підпис: тримаємо по baseline */
+.stat-title{
+    display:flex;
+    align-items:baseline;  /* Вирівнює цифру й текст по низу */
+    line-height:1.15;      /* щільніше, щоб не роздувало блок */
+}
+
+/* велика жовта / рожева цифра */
+.stat-value{
+    display:inline-block;
+    line-height:1;          /* прибираємо зайвий міжрядок */
+    transform:translateY(1px); /* на 1-2 px опускаємо, щоб було на одній лінії */
+}
+
+/* підзаголовок (дата) — зменшуємо міжрядок, щоб не «плавало» */
+.stat-subtitle{
+    line-height:1.25;
+}
+
+/* win / lose лічильник під прогрес-баром */
+.winlose-count{
+    line-height:1.2;
+}
+/* ─────────── Team widget ─────────── */
+.team-widget {
+    margin-top: var(--gap);
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--gap);
+}
+
+.team-total {
+    font-size: 0.9rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.team-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team-item {
+    display: grid;
+    grid-template-columns: 40px 1fr 80px 60px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: rgba(30,30,30,0.45);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    margin-bottom: 8px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.team-item:hover{
+    background-color: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+}
+
+.team-list a.team-item {
+    color: inherit;
+    text-decoration: none;
+}
+
+.team-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.team-name{
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.team-winrate,
+.team-games{
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.team-bar{
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+.bar-fill{
+    height: 100%;
+    background: #d4c53f;          /* жовтий за замовчуванням */
+    border-radius: 3px;
+}
+/* ───────────────── items grid ───────────────── */
+.items-grid{
+    display:grid;
+    grid-template-columns:repeat(3,48px);
+    gap:10px;
+}
+
+/* контейнер однієї іконки */
+.item-wrapper{
+    position:relative;
+    width:48px;
+    height:32px;
+    border-radius:6px;
+}
+
+/* PNG-іконка */
+.item-icon{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:6px;
+    background:#111318;          /* заповнює прозорість */
+}
+
+/* порожній слот */
+.item-empty{
+    width:48px;
+    height:32px;
+    background:#2f3136;
+    border-radius:6px;
+    opacity:.3;
+}
+
+/* ─────────── tooltip ─────────── */
+.item-tooltip{
+    visibility:hidden;           /* ► м’яке появлення */
+    opacity:0;
+    transition:opacity .15s ease;
+
+    position:absolute;
+    bottom:115%;
+    left:50%;
+    transform:translateX(-50%);
+    min-width:220px;
+    max-width:320px;
+
+    background:#181a1f;
+    color:#f1f1f1;
+    padding:8px 10px;
+    border-radius:8px;
+    font-size:.8rem;
+    line-height:1.35;
+    box-shadow:0 4px 12px rgba(0,0,0,.45);
+    z-index:100;
+    white-space:normal;
+    text-align:left;
+}
+.item-wrapper:hover .item-tooltip{
+    visibility:visible;
+    opacity:1;
+}
+
+.match-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.match-items-block {
+    flex-shrink: 0;
+}
+
+.match-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.match-items-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-left: auto;
+    margin-top: -10px;
+}
+
+.items-inline {
+    display: flex;
+    padding: 0;
+    background: none;
+    margin: 0;
+}
+
+.items-grid.items-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+/* ────────── NEW — section header з кнопкою ────────── */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--gap);
+}
+
+.view-all-button {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--accent);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.view-all-button:hover {
+    background: var(--accent);
+    color: #000;
+    transform: translateY(-1px);
+}
+
+
+/* ──────────────────────────────────── */
+/*         FILTER BAR CONTAINER        */
+/* ──────────────────────────────────── */
+.filters-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px;
+    background: rgba(30, 30, 30, 0.6);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    margin-bottom: 24px;
+}
+
+/* ──────────────────────────────────── */
+/*         GROUP OF DROPDOWNS          */
+/* ──────────────────────────────────── */
+.filter-group {
+    display: flex;
+    gap: 12px;
+}
+
+/* ──────────────────────────────────── */
+/*           FILTER BUTTONS            */
+/* ──────────────────────────────────── */
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+.filter-btn .caret {
+    margin-left: 4px;
+    font-size: 0.7rem;
+}
+
+/* ──────────────────────────────────── */
+/*         DROPDOWN LIST MENU         */
+/* ──────────────────────────────────── */
+.dropdown-list {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 300;
+    list-style: none;
+}
+
+/* ──────────────────────────────────── */
+/*        SEARCHABLE DROPDOWNS         */
+/* ──────────────────────────────────── */
+.search-list input {
+    width: calc(100% - 16px);
+    margin: 0 8px 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+.search-list ul {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* ──────────────────────────────────── */
+/*          DROPDOWN ITEMS             */
+/* ──────────────────────────────────── */
+.dropdown-list ul,
+.dropdown-list > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.dropdown-list li {
+    padding: 8px 14px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background 0.15s;
+}
+.dropdown-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* ──────────────────────────────────── */
+/*             TOGGLE SWITCH           */
+/* ──────────────────────────────────── */
+.switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+/* сховаємо нативний чекбокс */
+.switch input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* фон та розміри перемикача */
+.switch .slider {
+    position: relative;
+    width: 34px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    transition: background 0.2s;
+}
+/* кружечок-“повзунок” */
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 2px;
+    left: 2px;
+    background: #2f3136;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+/* галочка всередині кружечка */
+.switch .slider .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 10px;
+}
+/* стан “вкл” */
+.switch input:checked + .slider {
+    background: var(--accent);
+}
+.switch input:checked + .slider::before {
+    transform: translateX(16px);
+    background: #fff;
+}
+.switch input:checked + .slider .checkmark {
+    display: flex;
+    transform: translateX(16px);
+}
+/* текстова мітка */
+.switch .label-text {
+    color: #fff;
+    font-size: 0.9rem;
+    user-select: none;
+}
+/* Додаємо відносне позиціонування для прив’язки absolute */
+.filter-dropdown {
+    position: relative;
+    /* І переконуємося, що спадковий overflow не обтинає */
+    overflow: visible;
+    z-index: 400; /* щоб стояло над рештою контенту */
+}
+.filters-bar {
+    position: relative;    /* для нового контексту стеку */
+    overflow: visible;
+    z-index: 300;
+}

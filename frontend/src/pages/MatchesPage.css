@@ -1,0 +1,67 @@
+/* src/pages/MatchesPage.css */
+.page.matches-page {
+    padding: var(--gap);
+}
+
+.section-card {
+    background: rgba(30,30,30,0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    padding: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: var(--gap);
+}
+
+.matches-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.matches-table th,
+.matches-table td {
+    padding: 8px 12px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.matches-table th {
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.matches-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+.matches-table td.winner.win {
+    color: #43b581; /* зелений */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+.matches-table td.winner.lose {
+    color: #f04747; /* червоний */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+.matches-table td .score.win {
+    color: #43b581; /* зелений */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-weight: bold;
+    padding-right: 4px;
+}
+
+.matches-table td .score.lose {
+    color: #f04747; /* червоний */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-weight: bold;
+    padding-left: 4px;
+}

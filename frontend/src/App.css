@@ -1,0 +1,102 @@
+/* Додати в кінець файлу */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {  height: 100%;
+  width: 100%;
+}
+
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #7289da; /* Discord blue */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #99aab5;
+  margin-top: 30px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2f3136;
+  color: #f2f3f5;
+  font-size: 16px;
+}
+
+.search-bar button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5865f2; /* Discord blurple */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar button:hover {
+  background-color: #4752c4;
+}
+
+.match-list,
+.hero-list {
+  list-style: none;
+  padding: 0;
+}
+
+.match-list li,
+.hero-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #2f3136;
+}
+
+.hero-list li {
+  display: flex;
+  align-items: center;
+}
+
+.hero-icon {
+  width: 50px;
+  height: auto;
+  margin-right: 12px;
+  border-radius: 6px;
+}
+
+.hero-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.hero-stats {
+  color: #b9bbbe;
+}
+
+.stats {
+  background-color: #2f3136;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.stats div {
+  margin-bottom: 8px;
+}
