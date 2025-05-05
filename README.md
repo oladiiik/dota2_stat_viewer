@@ -11,7 +11,7 @@
 
 ## ⚙️ Технології
 - **Backend**: Java 21, Spring Boot, JDBC
-- **Frontend**: React, TypeScript
+- **Frontend**: React
 - **Database**: MySQL 8.0
 - **API**: Steam Web API, OpenDota API
 
